@@ -1,26 +1,51 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+// import { ThemeProvider, createTheme } from '@mui/material/styles'
+// import { ptBR } from '@mui/material/locale'
+import Home from './template/Home'
 
-function App() {
+// const defaultTheme = createTheme(
+//   {
+//     palette: {
+//       mode: 'light',
+//       secondary: {
+//         main: '#7A5CFA',
+//         light: '#00BDFC',
+//         dark: '#00a4db',
+//         contrastText: '#fff'
+//       },
+//       info: {
+//         main: '#6AD9FF',
+//         light: '#6AD9FF',
+//         dark: '#09ace2',
+//         contrastText: '#fff'
+//       }
+//     },
+//     mixins: {
+//       toolbar: {
+//         minHeight: 0,
+//         paddingRight: 0,
+//         '@media (min-width:600px)': {
+//           paddingRight: '175px'
+//         }
+//       }
+//     },
+//     typography: {
+//       fontFamily: 'Noto Sans'
+//     }
+//     // overrides: {
+//     //   MuiCssBaseline: {
+//     //     styleOverrides: `@global: {
+//     //         @font-face: ${notoSans}
+//     //       }`
+//     //   }
+//     // }
+//   },
+//   ptBR
+// )
+
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ThemeProvider theme={defaultTheme}>
+    // </ThemeProvider>
+    <Home />
   )
 }
-
-export default App

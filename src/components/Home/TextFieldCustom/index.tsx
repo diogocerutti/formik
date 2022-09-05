@@ -20,7 +20,7 @@ export const TextFieldCustom: React.FC<FieldProps & TextFieldProps> = (
       variant="outlined"
       error={error ?? Boolean(isTouched && errorMessage)}
       helperText={
-        helperText ?? (isTouched && errorMessage ? errorMessage : undefined)
+        helperText ?? (isTouched && errorMessage ? errorMessage : ' ')
       }
       {...rest}
       {...field}
@@ -43,7 +43,7 @@ export const TextFieldMessage: React.FC<FieldProps & TextFieldProps> = (
       rows={3}
       error={error ?? Boolean(isTouched && errorMessage)}
       helperText={
-        helperText ?? (isTouched && errorMessage ? errorMessage : undefined)
+        helperText ?? (isTouched && errorMessage ? errorMessage : ' ')
       }
       {...rest}
       {...field}

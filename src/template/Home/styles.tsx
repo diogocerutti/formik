@@ -4,6 +4,12 @@ export const styles = {
     fontWeight: 'bold'
   },
   mainSubtitle: {
-    fontSize: '13px'
+    fontSize: '15px'
+  },
+  submitButton: {
+    '&:hover': {
+      backgroundColor: '#1E57B7',
+      color: '#fff'
+    }
   }
 }

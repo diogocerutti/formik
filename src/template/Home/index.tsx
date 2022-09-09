@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { Stack, Typography } from '@mui/material'
+import { Stack } from '@mui/material'
 import { Formik, FormikHelpers, FormikProps, Form, Field } from 'formik'
 import {
   TextFieldCustom,
   TextFieldMessage
 } from '../../components/Home/TextFieldCustom'
-import { styles } from './styles'
 import { validationSchema } from '../../validations/Home'
 import { DefaultContainer } from '../../components/Home/DefaultContainer'
 import { SubmitButton } from '../../components/Home/SubmitButton'
+import { MainTitle } from '../../components/Home/MainTitle'
 
 interface FormValues {
   name: string
@@ -30,20 +30,13 @@ export default function Home() {
 
   return (
     <DefaultContainer>
-      <Stack sx={{ width: '50%' }}>
-        <Typography sx={styles.mainTitle}>Fale conosco</Typography>
-        <Typography sx={styles.mainSubtitle}>
-          Gostaria de falar conosco sobre algum assunto que não encontrou por
-          aqui? Sinta-se a vontade, responderemos rapidinho.
-        </Typography>
-        <Stack sx={{ border: 1, display: open }}>
-          <Typography>DADOS ENVIADOS:</Typography>
-          <Typography>Nome: {name}</Typography>
-          <Typography>E-mail: {email}</Typography>
-          <Typography>Telefone: {telephone}</Typography>
-          <Typography>Menssagem: {message}</Typography>
-        </Stack>
-      </Stack>
+      <MainTitle
+        open={open}
+        name={name}
+        email={email}
+        telephone={telephone}
+        message={message}
+      />
       <Stack sx={{ width: '50%', margin: '1%' }}>
         <Formik
           initialValues={{

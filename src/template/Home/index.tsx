@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Stack } from '@mui/material'
 import { Formik, FormikHelpers, FormikProps, Form, Field } from 'formik'
 import {
@@ -9,7 +9,6 @@ import { validationSchema } from '../../validations/Home'
 import { DefaultContainer } from '../../components/Home/DefaultContainer'
 import { SubmitButton } from '../../components/Home/SubmitButton'
 import { MainTitle } from '../../components/Home/MainTitle'
-
 interface FormValues {
   name: string
   email: string
@@ -37,7 +36,7 @@ export default function Home() {
         telephone={telephone}
         message={message}
       />
-      <Stack sx={{ width: '50%', margin: '1%' }}>
+      <Stack width="100%">
         <Formik
           initialValues={{
             name: '',

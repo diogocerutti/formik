@@ -7,12 +7,16 @@ type DefaultContainerTypes = {
 
 export function DefaultContainer({ children }: DefaultContainerTypes) {
   return (
-    <Stack maxWidth={'xs'}>
-      <Container>
-        <Stack maxWidth={'xs'} display="flex" flexDirection={'row'}>
-          {children}
-        </Stack>
-      </Container>
-    </Stack>
+    <Container maxWidth={'lg'}>
+      <Stack
+        flexDirection={'row'}
+        justifyContent={'space-between'}
+        alignItems={'baseline'}
+        direction={{ xs: 'column', sm: 'row' }}
+        spacing={{ xs: 1, sm: 2, md: 4 }}
+      >
+        {children}
+      </Stack>
+    </Container>
   )
 }

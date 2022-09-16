@@ -26,7 +26,7 @@ export function MainTitle({
   message
 }: MainTitleTypes) {
   return (
-    <Stack sx={{ width: '50%' }}>
+    <Stack width="100%">
       <Typography sx={style.mainTitle}>Fale conosco</Typography>
       <Typography sx={style.mainSubtitle}>
         Gostaria de falar conosco sobre algum assunto que não encontrou por

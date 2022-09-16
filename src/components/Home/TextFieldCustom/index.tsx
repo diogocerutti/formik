@@ -2,11 +2,6 @@ import React from 'react'
 import { FieldProps, getIn } from 'formik'
 import { TextFieldProps, TextField } from '@mui/material'
 
-/**
- * Material TextField Component with Formik Support including Errors.
- * Intended to be specified via the `component` prop in a Formik <Field> or <FastField> component.
- * Material-UI specific props are passed through.
- */
 export const TextFieldCustom: React.FC<FieldProps & TextFieldProps> = (
   props
 ) => {

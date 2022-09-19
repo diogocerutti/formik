@@ -7,11 +7,7 @@ const style: SxProps = {
   }
 }
 
-interface SubmitButtonTypes {
-  disabled: boolean
-}
-
-export function SubmitButton({ disabled }: SubmitButtonTypes) {
+export function SubmitButton() {
   return (
     <Stack sx={{ maxWidth: '33vh' }}>
       <Button
@@ -20,7 +16,6 @@ export function SubmitButton({ disabled }: SubmitButtonTypes) {
         variant="contained"
         size="large"
         color="secondary"
-        disabled={disabled}
       >
         Enviar
       </Button>

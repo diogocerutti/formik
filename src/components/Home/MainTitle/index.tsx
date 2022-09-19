@@ -37,7 +37,7 @@ export function MainTitle({
         <Typography>Nome: {name}</Typography>
         <Typography>E-mail: {email}</Typography>
         <Typography>Telefone: {telephone}</Typography>
-        <Typography>Menssagem: {message}</Typography>
+        <Typography>Mensagem: {message}</Typography>
       </Stack>
     </Stack>
   )

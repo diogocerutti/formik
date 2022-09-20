@@ -1,7 +1,7 @@
 import { ChangeEventHandler } from 'react'
 import { TextField } from '@mui/material'
 
-interface TextFieldCustomTypes {
+interface TextAreaCustomTypes {
   name: string
   label: string
   value: string
@@ -10,14 +10,14 @@ interface TextFieldCustomTypes {
   helperText: string | false | undefined
 }
 
-export function TextFieldCustom({
+export function TextAreaCustom({
   name,
   label,
   value,
   onChange,
   error,
   helperText
-}: TextFieldCustomTypes) {
+}: TextAreaCustomTypes) {
   return (
     <TextField
       name={name}
@@ -31,6 +31,8 @@ export function TextFieldCustom({
       FormHelperTextProps={{
         sx: { height: 0 }
       }}
+      multiline
+      rows={3}
     />
   )
 }

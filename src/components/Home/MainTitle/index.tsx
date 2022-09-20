@@ -32,8 +32,10 @@ export function MainTitle({
         Gostaria de falar conosco sobre algum assunto que não encontrou por
         aqui? Sinta-se a vontade, responderemos rapidinho.
       </Typography>
-      <Stack sx={{ border: 1, display: open }}>
-        <Typography>DADOS ENVIADOS:</Typography>
+      <Stack
+        sx={{ border: 1, display: open, padding: 1, mt: 2, borderRadius: 1 }}
+      >
+        <Typography sx={{ fontWeight: 'bold' }}>DADOS ENVIADOS:</Typography>
         <Typography>Nome: {name}</Typography>
         <Typography>E-mail: {email}</Typography>
         <Typography>Telefone: {telephone}</Typography>

@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { Stack, TextField } from '@mui/material'
 import { FormikHelpers, useFormik } from 'formik'
 import { validation } from '../../validations/Home'
 import { DefaultContainer } from '../../components/Home/DefaultContainer'
 import { SubmitButton } from '../../components/Home/SubmitButton'
 import { MainTitle } from '../../components/Home/MainTitle'
+import { TextFieldCustom } from '../../components/Home/TextFieldCustom'
+import { TextAreaCustom } from '../../components/Home/TextAreaCustom'
+import { DefaultForm } from '../../components/Home/DefaultForm'
+import { handleSubmit } from '../../functions/Home'
 interface FormValues {
   name: string
   email: string
@@ -14,10 +17,6 @@ interface FormValues {
 
 export default function Home() {
   const [open, setOpen] = useState('none')
-
-  const handleSubmit = () => {
-    setOpen('flex')
-  }
 
   const formik = useFormik({
     initialValues: {
@@ -31,10 +30,12 @@ export default function Home() {
       values: FormValues,
       formikHelpers: FormikHelpers<FormValues>
     ) => {
-      alert(JSON.stringify(values, null, 2))
-      formikHelpers.setSubmitting(false)
-      formikHelpers.resetForm()
-      handleSubmit()
+      handleSubmit(setOpen, 'flex')
+      setTimeout(() => {
+        formikHelpers.setSubmitting(false)
+        formikHelpers.resetForm()
+        setOpen('none')
+      }, 5000)
     }
   })
 
@@ -47,66 +48,41 @@ export default function Home() {
         telephone={formik.values.telephone}
         message={formik.values.message}
       />
-      <Stack
-        autoComplete="false"
-        width="100%"
-        component="form"
-        spacing={3}
-        onSubmit={formik.handleSubmit}
-      >
-        <TextField
-          id="name"
+      <DefaultForm onSubmit={formik.handleSubmit} onBlur={formik.handleBlur}>
+        <TextFieldCustom
           name="name"
-          variant="outlined"
+          label="Nome"
           value={formik.values.name}
           onChange={formik.handleChange}
-          label="Nome"
           error={formik.touched.name && Boolean(formik.errors.name)}
           helperText={formik.touched.name && formik.errors.name}
-          size="small"
-          FormHelperTextProps={{
-            sx: { margin: 0, padding: 0, height: 0 }
-          }}
-        />
-
-        <TextField
-          id="email"
+        ></TextFieldCustom>
+        <TextFieldCustom
           name="email"
-          variant="outlined"
+          label="E-mail"
           value={formik.values.email}
           onChange={formik.handleChange}
-          label="E-mail"
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
-          size="small"
-        />
-
-        <TextField
-          id="telephone"
+        ></TextFieldCustom>
+        <TextFieldCustom
           name="telephone"
-          variant="outlined"
+          label="Telefone"
           value={formik.values.telephone}
           onChange={formik.handleChange}
-          label="Telefone"
           error={formik.touched.telephone && Boolean(formik.errors.telephone)}
           helperText={formik.touched.telephone && formik.errors.telephone}
-          size="small"
-        />
-
-        <TextField
-          id="message"
+        ></TextFieldCustom>
+        <TextAreaCustom
           name="message"
-          multiline
-          rows={3}
-          variant="outlined"
+          label="Mensagem"
           value={formik.values.message}
           onChange={formik.handleChange}
           error={formik.touched.message && Boolean(formik.errors.message)}
           helperText={formik.touched.message && formik.errors.message}
-          label="Mensagem"
-        />
-        <SubmitButton />
-      </Stack>
+        ></TextAreaCustom>
+        <SubmitButton name="submitButton" disabled={formik.isSubmitting} />
+      </DefaultForm>
     </DefaultContainer>
   )
 }

@@ -27,7 +27,7 @@ export function MainTitle({
 }: MainTitleTypes) {
   return (
     <Stack width="100%">
-      <Typography sx={style.mainTitle}>Fale conosco</Typography>
+      <Typography sx={style.mainTitle}>Fale conosco!</Typography>
       <Typography sx={style.mainSubtitle}>
         Gostaria de falar conosco sobre algum assunto que não encontrou por
         aqui? Sinta-se a vontade, responderemos rapidinho.
